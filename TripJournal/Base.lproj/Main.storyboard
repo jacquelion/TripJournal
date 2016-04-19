@@ -18,8 +18,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Trip Journal!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aA6-ds-5vQ">
+                                <rect key="frame" x="205" y="72" width="191" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Q2i-cW-L30">
                                 <rect key="frame" x="0.0" y="101" width="600" height="499"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="JPh-vf-Cc0">
                                     <size key="itemSize" width="161" height="148"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -44,12 +51,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Trip Journal!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aA6-ds-5vQ">
-                                <rect key="frame" x="205" y="72" width="191" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnC-gp-APy">
+                                <rect key="frame" x="404" y="67" width="193" height="30"/>
+                                <state key="normal" title="Authenticate with Instagram"/>
+                                <connections>
+                                    <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jA6-JN-rp6"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -58,8 +66,10 @@
                             <constraint firstItem="Q2i-cW-L30" firstAttribute="centerX" secondItem="Irg-IP-kmc" secondAttribute="centerX" id="2s8-ob-yYN"/>
                             <constraint firstItem="Q2i-cW-L30" firstAttribute="centerX" secondItem="aA6-ds-5vQ" secondAttribute="centerX" id="4dP-9W-LV4"/>
                             <constraint firstItem="Q2i-cW-L30" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="A97-0E-MfO"/>
+                            <constraint firstItem="SnC-gp-APy" firstAttribute="leading" secondItem="aA6-ds-5vQ" secondAttribute="trailing" constant="8" symbolic="YES" id="L8I-Ga-k23"/>
                             <constraint firstItem="aA6-ds-5vQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pbo-6r-6Zn"/>
                             <constraint firstItem="Q2i-cW-L30" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ln8-5u-9gR"/>
+                            <constraint firstItem="SnC-gp-APy" firstAttribute="centerY" secondItem="aA6-ds-5vQ" secondAttribute="centerY" id="mek-R6-ofn"/>
                             <constraint firstItem="Q2i-cW-L30" firstAttribute="top" secondItem="aA6-ds-5vQ" secondAttribute="bottom" constant="8" symbolic="YES" id="xZ3-jj-X7R"/>
                         </constraints>
                     </view>
@@ -119,6 +129,9 @@
                                     <constraint firstAttribute="height" constant="30" id="4fy-09-oLg"/>
                                 </constraints>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButtonPressed:" destination="aF4-ks-wya" eventType="touchUpInside" id="Lhb-zo-aJ0"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an instagram account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YGh-iT-Mz7">
                                 <rect key="frame" x="0.0" y="311" width="600" height="37"/>
@@ -129,6 +142,10 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3ct-AQ-LAq">
+                                <rect key="frame" x="0.0" y="28" width="600" height="572"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -137,22 +154,65 @@
                             <constraint firstItem="21d-PM-tb9" firstAttribute="top" secondItem="hEr-xe-Snn" secondAttribute="bottom" constant="19" id="C0v-mH-VQY"/>
                             <constraint firstItem="Ao2-CY-OCW" firstAttribute="leading" secondItem="YGh-iT-Mz7" secondAttribute="leading" id="EHz-HN-ggD"/>
                             <constraint firstItem="hEr-xe-Snn" firstAttribute="leading" secondItem="21d-PM-tb9" secondAttribute="leading" id="LvS-7T-ZDz"/>
+                            <constraint firstItem="3ct-AQ-LAq" firstAttribute="top" secondItem="5Pk-I3-T3X" secondAttribute="bottom" constant="8" symbolic="YES" id="N6I-ma-rQx"/>
                             <constraint firstItem="21d-PM-tb9" firstAttribute="trailing" secondItem="9Rs-Da-XHL" secondAttribute="trailing" id="P1z-S9-FYd"/>
+                            <constraint firstItem="3ct-AQ-LAq" firstAttribute="trailing" secondItem="Ao2-CY-OCW" secondAttribute="trailing" id="RbK-1e-EYH"/>
                             <constraint firstItem="Ao2-CY-OCW" firstAttribute="leading" secondItem="g32-qc-Yhp" secondAttribute="leading" id="VsK-ds-WHF"/>
                             <constraint firstItem="21d-PM-tb9" firstAttribute="leading" secondItem="9Rs-Da-XHL" secondAttribute="leading" id="e4f-VV-lNB"/>
                             <constraint firstItem="Ao2-CY-OCW" firstAttribute="trailing" secondItem="YGh-iT-Mz7" secondAttribute="trailing" id="ed2-3r-cDZ"/>
                             <constraint firstAttribute="trailing" secondItem="Ao2-CY-OCW" secondAttribute="trailing" id="goJ-1Z-eA9"/>
                             <constraint firstItem="Ao2-CY-OCW" firstAttribute="centerX" secondItem="hEr-xe-Snn" secondAttribute="centerX" id="hNR-yi-W6E"/>
                             <constraint firstItem="Hdv-RI-pbV" firstAttribute="top" secondItem="YGh-iT-Mz7" secondAttribute="bottom" constant="252" id="k37-w1-2wZ"/>
+                            <constraint firstItem="3ct-AQ-LAq" firstAttribute="bottom" secondItem="Hdv-RI-pbV" secondAttribute="top" id="kD8-hu-6l3"/>
+                            <constraint firstItem="3ct-AQ-LAq" firstAttribute="leading" secondItem="YGh-iT-Mz7" secondAttribute="leading" id="lbF-WS-7Hk"/>
                             <constraint firstItem="YGh-iT-Mz7" firstAttribute="top" secondItem="9Rs-Da-XHL" secondAttribute="bottom" constant="34" id="oEa-Qo-b6N"/>
                             <constraint firstItem="9Rs-Da-XHL" firstAttribute="top" secondItem="21d-PM-tb9" secondAttribute="bottom" constant="26" id="pLJ-MI-fhU"/>
                             <constraint firstItem="hEr-xe-Snn" firstAttribute="trailing" secondItem="21d-PM-tb9" secondAttribute="trailing" id="xHT-k0-u1v"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="9Rs-Da-XHL" id="Rsk-Jm-IFP"/>
+                        <outlet property="myWebView" destination="3ct-AQ-LAq" id="9Wf-10-aG2"/>
+                        <outlet property="passwordTextField" destination="21d-PM-tb9" id="vfm-Bm-Zv4"/>
+                        <outlet property="usernameTextField" destination="hEr-xe-Snn" id="Ut7-jv-JSQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WIO-M6-8mW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2600" y="479"/>
+        </scene>
+        <!--Instagram Auth View Controller-->
+        <scene sceneID="V9d-FO-dCY">
+            <objects>
+                <viewController storyboardIdentifier="InstagramAuthViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Ctc-R2-MHo" customClass="InstagramAuthViewController" customModule="TripJournal" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xq8-fZ-G3R"/>
+                        <viewControllerLayoutGuide type="bottom" id="e3J-GT-xty"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Y9K-Kp-T16">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="csV-fM-Gub">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="csV-fM-Gub" firstAttribute="leading" secondItem="Y9K-Kp-T16" secondAttribute="leading" id="B5c-v8-EgT"/>
+                            <constraint firstAttribute="trailing" secondItem="csV-fM-Gub" secondAttribute="trailing" id="Ewi-dc-jDw"/>
+                            <constraint firstItem="csV-fM-Gub" firstAttribute="top" secondItem="Xq8-fZ-G3R" secondAttribute="bottom" id="avs-Zr-6AU"/>
+                            <constraint firstItem="csV-fM-Gub" firstAttribute="bottom" secondItem="e3J-GT-xty" secondAttribute="top" id="gvK-7c-NJR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="csV-fM-Gub" id="9Hc-57-4xV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QV5-n2-QNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3225" y="479"/>
         </scene>
         <!--Set Trip Dates View Controller-->
         <scene sceneID="Fa4-UF-kwS">

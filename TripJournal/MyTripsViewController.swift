@@ -24,5 +24,25 @@ class MyTripsViewController: UIViewController {
         performSegueWithIdentifier("AddTrip", sender: self)
     }
 
+    @IBAction func loginPressed(sender: UIButton) {
+        InstagramClient.sharedInstance().authenticateWithViewController(self) { (success, errorString) in
+            performUIUpdatesOnMain {
+                if success {
+                    self.completeLogin()
+                } else {
+                    print(errorString)
+                }
+            }
+        
+        }
+    
+    }
+    
+    //MARK: Login
+    
+    private func completeLogin() {
+    
+    }
+    
 }
 
