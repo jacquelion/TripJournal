@@ -92,7 +92,7 @@ class InstagramClient : NSObject {
         request.HTTPMethod = "POST"
         //request.addValue()
         request.HTTPBody = jsonBody.dataUsingEncoding(NSUTF8StringEncoding)
-        
+        print("REQUEST: ", request)
         //Make Request
         let task = session.dataTaskWithRequest(request) {(data, response, error) in
         

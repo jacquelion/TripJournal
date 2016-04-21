@@ -52,7 +52,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SnC-gp-APy">
-                                <rect key="frame" x="404" y="67" width="193" height="30"/>
+                                <rect key="frame" x="203" y="101" width="193" height="30"/>
                                 <state key="normal" title="Authenticate with Instagram"/>
                                 <connections>
                                     <action selector="loginPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jA6-JN-rp6"/>
@@ -61,16 +61,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Irg-IP-kmc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="1Ai-qS-b5d"/>
-                            <constraint firstItem="aA6-ds-5vQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="1Hy-He-b4K"/>
-                            <constraint firstItem="Q2i-cW-L30" firstAttribute="centerX" secondItem="Irg-IP-kmc" secondAttribute="centerX" id="2s8-ob-yYN"/>
-                            <constraint firstItem="Q2i-cW-L30" firstAttribute="centerX" secondItem="aA6-ds-5vQ" secondAttribute="centerX" id="4dP-9W-LV4"/>
-                            <constraint firstItem="Q2i-cW-L30" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="A97-0E-MfO"/>
-                            <constraint firstItem="SnC-gp-APy" firstAttribute="leading" secondItem="aA6-ds-5vQ" secondAttribute="trailing" constant="8" symbolic="YES" id="L8I-Ga-k23"/>
-                            <constraint firstItem="aA6-ds-5vQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Pbo-6r-6Zn"/>
-                            <constraint firstItem="Q2i-cW-L30" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ln8-5u-9gR"/>
-                            <constraint firstItem="SnC-gp-APy" firstAttribute="centerY" secondItem="aA6-ds-5vQ" secondAttribute="centerY" id="mek-R6-ofn"/>
-                            <constraint firstItem="Q2i-cW-L30" firstAttribute="top" secondItem="aA6-ds-5vQ" secondAttribute="bottom" constant="8" symbolic="YES" id="xZ3-jj-X7R"/>
+                            <constraint firstItem="Q2i-cW-L30" firstAttribute="top" secondItem="SnC-gp-APy" secondAttribute="top" id="5F3-81-S0Q"/>
+                            <constraint firstItem="aA6-ds-5vQ" firstAttribute="trailing" secondItem="SnC-gp-APy" secondAttribute="trailing" id="8QS-6y-XaR"/>
+                            <constraint firstItem="Irg-IP-kmc" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Msi-KL-Fbw"/>
+                            <constraint firstItem="aA6-ds-5vQ" firstAttribute="centerX" secondItem="Irg-IP-kmc" secondAttribute="centerX" id="PVs-Lt-mJq"/>
+                            <constraint firstItem="SnC-gp-APy" firstAttribute="top" secondItem="aA6-ds-5vQ" secondAttribute="bottom" constant="8" symbolic="YES" id="Qw7-uT-lOs"/>
+                            <constraint firstItem="Q2i-cW-L30" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Wgj-Uu-gdc"/>
+                            <constraint firstItem="aA6-ds-5vQ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="Yg0-hQ-Qv9"/>
+                            <constraint firstItem="Q2i-cW-L30" firstAttribute="bottom" secondItem="wfy-db-euE" secondAttribute="top" id="lgh-Yl-n2i"/>
+                            <constraint firstAttribute="trailing" secondItem="Q2i-cW-L30" secondAttribute="trailing" id="nuD-z5-6Gu"/>
+                            <constraint firstItem="Q2i-cW-L30" firstAttribute="centerX" secondItem="SnC-gp-APy" secondAttribute="centerX" id="xPo-Z1-0S5"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="My Trips" id="pkP-9s-9NL">
@@ -179,7 +179,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WIO-M6-8mW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2600" y="479"/>
+            <point key="canvasLocation" x="2694" y="170"/>
         </scene>
         <!--Instagram Auth View Controller-->
         <scene sceneID="V9d-FO-dCY">
@@ -212,7 +212,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QV5-n2-QNd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3225" y="479"/>
+            <point key="canvasLocation" x="2694" y="826"/>
         </scene>
         <!--Set Trip Dates View Controller-->
         <scene sceneID="Fa4-UF-kwS">
@@ -234,15 +234,6 @@
                                     <action selector="addTitle:" destination="g3r-17-qKI" eventType="editingDidEnd" id="3BQ-ov-3AH"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create A Trip!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HBj-Lt-XEm">
-                                <rect key="frame" x="0.0" y="69" width="600" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="ohd-Ie-ibz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86p-1i-Smb">
                                 <rect key="frame" x="78" y="193" width="83" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -281,26 +272,38 @@
                                     <action selector="nextButtonPressed:" destination="g3r-17-qKI" eventType="touchUpInside" id="Cch-Nc-93r"/>
                                 </connections>
                             </button>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4da-Sk-2bL">
+                                <rect key="frame" x="0.0" y="25" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Create A Trip" id="A4L-r7-LDB">
+                                        <barButtonItem key="leftBarButtonItem" title="Item" systemItem="cancel" id="qai-fb-AwB">
+                                            <connections>
+                                                <action selector="cancel:" destination="g3r-17-qKI" id="oUL-wO-kCw"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dLa-2b-L5n" firstAttribute="top" secondItem="3ty-PT-q06" secondAttribute="bottom" constant="5" id="3NS-3y-E42"/>
                             <constraint firstItem="dLa-2b-L5n" firstAttribute="leading" secondItem="3ty-PT-q06" secondAttribute="leading" id="6I7-Rm-vPU"/>
                             <constraint firstItem="86p-1i-Smb" firstAttribute="centerY" secondItem="3ty-PT-q06" secondAttribute="centerY" id="Cxy-8a-FLx"/>
-                            <constraint firstAttribute="trailing" secondItem="HBj-Lt-XEm" secondAttribute="trailing" id="Hsk-bL-CjN"/>
+                            <constraint firstItem="4da-Sk-2bL" firstAttribute="leading" secondItem="IGx-3O-oLv" secondAttribute="leading" id="IvJ-Vg-pzL"/>
                             <constraint firstItem="86p-1i-Smb" firstAttribute="leading" secondItem="IGx-3O-oLv" secondAttribute="leadingMargin" constant="58" id="MKL-tF-QMR"/>
+                            <constraint firstItem="4da-Sk-2bL" firstAttribute="centerX" secondItem="Sgm-bE-YYU" secondAttribute="centerX" id="PRF-EE-Arf"/>
                             <constraint firstItem="Sgm-bE-YYU" firstAttribute="top" secondItem="dLa-2b-L5n" secondAttribute="bottom" constant="32" id="QEW-lB-msb"/>
                             <constraint firstItem="9lR-8G-W6P" firstAttribute="baseline" secondItem="dLa-2b-L5n" secondAttribute="baseline" id="QVK-8D-SRt"/>
-                            <constraint firstItem="HBj-Lt-XEm" firstAttribute="leading" secondItem="IGx-3O-oLv" secondAttribute="leading" id="RSH-Sz-PXN"/>
-                            <constraint firstItem="9lR-8G-W6P" firstAttribute="leading" secondItem="Zqz-WS-L0t" secondAttribute="leading" id="RXS-43-Ow1"/>
                             <constraint firstItem="3ty-PT-q06" firstAttribute="leading" secondItem="86p-1i-Smb" secondAttribute="trailing" constant="8" symbolic="YES" id="W2Q-v2-lXs"/>
                             <constraint firstItem="Sgm-bE-YYU" firstAttribute="centerX" secondItem="IGx-3O-oLv" secondAttribute="centerX" id="Yt2-Mg-AJQ"/>
                             <constraint firstItem="dLa-2b-L5n" firstAttribute="leading" secondItem="9lR-8G-W6P" secondAttribute="trailing" constant="14" id="anE-KY-yRa"/>
                             <constraint firstItem="dLa-2b-L5n" firstAttribute="trailing" secondItem="3ty-PT-q06" secondAttribute="trailing" id="bRp-fm-aNX"/>
-                            <constraint firstItem="3ty-PT-q06" firstAttribute="top" secondItem="Zqz-WS-L0t" secondAttribute="bottom" constant="26" id="cKp-cG-v4x"/>
-                            <constraint firstItem="Zqz-WS-L0t" firstAttribute="top" secondItem="HBj-Lt-XEm" secondAttribute="bottom" constant="20" id="lcF-gv-ODe"/>
-                            <constraint firstItem="HBj-Lt-XEm" firstAttribute="centerX" secondItem="Zqz-WS-L0t" secondAttribute="centerX" id="mNy-wd-S6U"/>
-                            <constraint firstItem="HBj-Lt-XEm" firstAttribute="top" secondItem="c7a-k8-yJY" secondAttribute="bottom" constant="49" id="orn-oM-4zy"/>
+                            <constraint firstItem="4da-Sk-2bL" firstAttribute="top" secondItem="c7a-k8-yJY" secondAttribute="bottom" constant="5" id="bTF-3L-dQj"/>
+                            <constraint firstItem="3ty-PT-q06" firstAttribute="top" secondItem="Zqz-WS-L0t" secondAttribute="bottom" constant="26" id="fDI-Fh-yDf"/>
+                            <constraint firstItem="Zqz-WS-L0t" firstAttribute="top" secondItem="4da-Sk-2bL" secondAttribute="bottom" constant="63" id="fDK-Mh-eSl"/>
+                            <constraint firstItem="Zqz-WS-L0t" firstAttribute="centerX" secondItem="4da-Sk-2bL" secondAttribute="centerX" id="r6v-zV-oSA"/>
+                            <constraint firstItem="Zqz-WS-L0t" firstAttribute="leading" secondItem="9lR-8G-W6P" secondAttribute="leading" id="zZv-pS-07v"/>
                         </constraints>
                     </view>
                     <connections>

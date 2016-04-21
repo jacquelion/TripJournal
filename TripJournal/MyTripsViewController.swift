@@ -30,7 +30,7 @@ class MyTripsViewController: UIViewController {
                 if success {
                     self.completeLogin()
                 } else {
-                    print(errorString)
+                    print("ERROR: ", errorString)
                 }
             }
         
@@ -41,6 +41,8 @@ class MyTripsViewController: UIViewController {
     //MARK: Login
     
     private func completeLogin() {
+        let vc = storyboard!.instantiateViewControllerWithIdentifier("SetTripDatesViewController") 
+        presentViewController(vc, animated: true, completion: nil)
     
     }
     

@@ -28,6 +28,10 @@ class SetTripDatesViewController : UIViewController {
         enableButton()
     }
     
+    @IBAction func cancel(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     @IBAction func addStartDate(sender: UITextField) {
         resignFirstResponder()
         let datePickerView:UIDatePicker = UIDatePicker()
