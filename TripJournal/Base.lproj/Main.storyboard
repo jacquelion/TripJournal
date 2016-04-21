@@ -128,7 +128,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="4fy-09-oLg"/>
                                 </constraints>
-                                <state key="normal" title="Login"/>
+                                <state key="normal" title="Import Images via Instagram"/>
                                 <connections>
                                     <action selector="loginButtonPressed:" destination="aF4-ks-wya" eventType="touchUpInside" id="Lhb-zo-aJ0"/>
                                 </connections>

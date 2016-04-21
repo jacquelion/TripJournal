@@ -39,7 +39,7 @@ class InstagramClient : NSObject {
         parameters[ParameterKeys.responseType] = ParameterValues.code
         
         var url = instagramURLFromParameters(parameters, withPathExtension: method)
-        print("REQUEST URL: ", url)
+        print("Line 42, REQUEST URL: ", url)
         
         //Build URL, Configure request
         let request = NSMutableURLRequest(URL: url)
@@ -86,13 +86,16 @@ class InstagramClient : NSObject {
     func taskForPostMethod(method: String, var parameters: [String: AnyObject], jsonBody: String, completionHandlerForPOST: (result: AnyObject!, error: NSError?) -> Void) -> NSURLSessionDataTask {
         //Set Parameters
         //Build URL, Configure Request
-        var url = instagramURLFromParameters(parameters, withPathExtension: method)
-        print("REQUEST URL: ", url)
-        let request = NSMutableURLRequest(URL: url)
+        //var url = instagramURLFromParameters(parameters, withPathExtension: method)
+        var urlString = "https://api.instagram.com/oauth/access_token"
+        print("Line 90 REQUEST URL: ", urlString)
+        var url = NSURL(string: urlString)
+        let request = NSMutableURLRequest(URL: url!)
         request.HTTPMethod = "POST"
-        //request.addValue()
+        request.addValue("application/json", forHTTPHeaderField: "Accept")
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         request.HTTPBody = jsonBody.dataUsingEncoding(NSUTF8StringEncoding)
-        print("REQUEST: ", request)
+        print("Line 95 REQUEST: ", request)
         //Make Request
         let task = session.dataTaskWithRequest(request) {(data, response, error) in
         
@@ -110,6 +113,8 @@ class InstagramClient : NSObject {
             
             /* GUARD: Did we get a successful 2XX response? */
             guard let statusCode = (response as? NSHTTPURLResponse)?.statusCode where statusCode >= 200 && statusCode <= 299 else {
+                let statusCodeResponse = (response as? NSHTTPURLResponse)?.statusCode
+                print("STATUS CODE: ", statusCodeResponse)
                 sendError("Your request returned a status code other than 2xx!")
                 return
             }

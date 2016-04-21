@@ -42,7 +42,7 @@ extension InstagramClient {
         
         let webAuthViewController = hostViewController.storyboard!.instantiateViewControllerWithIdentifier("InstagramAuthViewController") as! InstagramAuthViewController
         
-        let urlString = "https://api.instagram.com/oauth/authorize/?client_id=60e0fe0b74e849ec83f81f18b781b88f&redirect_uri=https://www.instagram.com/&response_type=code"
+        let urlString = "https://api.instagram.com/oauth/authorize/?client_id=60e0fe0b74e849ec83f81f18b781b88f&redirect_uri=https://www.instagram.com/&response_type=token"
         let url = NSURL(string: urlString)
         let request = NSURLRequest(URL: url!)
 

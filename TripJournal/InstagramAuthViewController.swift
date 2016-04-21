@@ -13,6 +13,7 @@ class InstagramAuthViewController: UIViewController {
 //  let urlString = "https://api.instagram.com/oauth/authorize/?client_id=60e0fe0b74e849ec83f81f18b781b88f&redirect_uri=https://www.instagram.com/&response_type=code"
     var urlRequest: NSURLRequest? = nil //this is passed in when view controller is instantiated
     var requestToken: String? = nil
+    var accessToken: String! = nil
     var completionHandlerForView: ((success: Bool, errorString: String?) -> Void)? = nil
     
     //MARK: - Outlets
@@ -63,17 +64,23 @@ extension InstagramAuthViewController : UIWebViewDelegate {
             print("Key, value: ", key, value)
             
             if key == "code" {
+                let params = [String: AnyObject]()
+                let jsonBody = "{\"client_id\": \"\(InstagramClient.Constants.ClientId)\",\"client_secret\":\"\(InstagramClient.Constants.ClientSecret)\", \"grant_type\":\"authorization_code\", \"redirect_uri\":\"\(InstagramClient.Constants.RedirectURI)\", \"code\":\"\(value)\"}"
+                print(jsonBody)
+                //let params: [String: AnyObject] = [ "client_id" : InstagramClient.Constants.ClientId, "client_secret" : InstagramClient.Constants.ClientSecret, "grant_type" : "authorization_code", "redirect_uri" : InstagramClient.Constants.RedirectURI, "code" : value]
                 
-                let params: [String: AnyObject] = [ "client_id" : InstagramClient.Constants.ClientId, "client_secret" : InstagramClient.Constants.ClientSecret, "grant_type" : "authorization_code", "redirect_uri" : InstagramClient.Constants.RedirectURI, "code" : value]
+                var codeValue = value
+                print(codeValue)
                 
-                InstagramClient.sharedInstance().taskForPostMethod(InstagramClient.Methods.Authorize, parameters: params, jsonBody: "") { (results, error) in
+                InstagramClient.sharedInstance().taskForPostMethod(InstagramClient.Methods.AccessToken, parameters: params, jsonBody: jsonBody) { (results, error) in
+                    print(error?.localizedDescription)
                     print("RESULTS", results)
-                    print("ERROR", error)
                 }
 
                 
             } else if key == "access_token" {
-                
+                accessToken = value
+                print("ACCESS TOKEN: ", accessToken)
             }
             
             
@@ -83,6 +90,10 @@ extension InstagramAuthViewController : UIWebViewDelegate {
             key = (url?.fragment?.componentsSeparatedByString("=").first)!
             value = (url?.fragment?.componentsSeparatedByString("=").last)!
             print("Key, value: ", key, value)
+            if key == "access_token" {
+                accessToken = value as! String
+                print("ACCESS TOKEN: ", accessToken)
+            }
 
         }
         
@@ -90,8 +101,13 @@ extension InstagramAuthViewController : UIWebViewDelegate {
     }
     
     func webViewDidFinishLoad(webView: UIWebView) {
-        if webView.request!.URL!.absoluteString == urlString {
-            
+        var urlString = ("https://www.instagram.com#access_token=\(accessToken)")
+        print("Redirect URL String + Access Token: ", urlString)
+        print("webView.request!.URL!.absoluteString: ", webView.request!.URL!.absoluteString)
+        if webView.request!.URL!.absoluteString == InstagramClient.Constants.RedirectURI {
+            dismissViewControllerAnimated(true) {
+                self.completionHandlerForView!(success: true, errorString: nil)
+            }
         } else if webView.request!.URL!.absoluteString == "" {
             dismissViewControllerAnimated(true) {
                 self.completionHandlerForView!(success: true, errorString: nil)

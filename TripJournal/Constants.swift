@@ -26,6 +26,7 @@ extension InstagramClient {
     
     struct Methods {
         static let Authorize = "/authorize/"
+        static let AccessToken = "/access_token/"
     }
     
     struct ParameterKeys {
